@@ -1,254 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cybersecurity & AI Solutions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background: #181a24;
-            color: #ececec;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background: #222338;
-            padding: 0.7rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav h1 {
-            color: #c6bfee;
-            margin: 0;
-            font-size: 1.6rem;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2em;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li a {
-            color: #dad8e9;
-            text-decoration: none;
-            font-size: 1.05em;
-        }
-        nav ul li a:hover {
-            color: #c6bfee;
-        }
-        .hero {
-            background: linear-gradient(110deg, #5545a2 60%, #231e3b 100%);
-            padding: 3em 1em;
-            text-align: center;
-            position: relative;
-        }
-        .hero img {
-            width: 80px;
-            height: auto;
-            position: absolute;
-            right: 6vw;
-            top: 2vw;
-            filter: drop-shadow(0 4px 16px #0005);
-        }
-        .hero h2 {
-            font-size: 2.1em;
-            color: #c6bfee;
-            margin: 0 0 0.2em;
-        }
-        .hero p {
-            font-size: 1.15em;
-            color: #e3e3e3;
-            max-width: 540px;
-            margin: auto;
-        }
-        section {
-            margin: 2rem auto;
-            max-width: 920px;
-            padding: 1.8rem 2.3rem;
-            background: #222338;
-            border-radius: 16px;
-            box-shadow: 0 3px 24px rgba(35,30,85,0.16);
-        }
-        h2 {
-            color: #dad8e9;
-            margin: 0 0 0.8em 0;
-        }
-        ul {
-            margin: 0 0 0.7em 0.7em;
-            padding: 0;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.5em;
-            margin-top: 0.7em;
-        }
-        .card {
-            background: #292b46;
-            border-radius: 11px;
-            box-shadow: 0 2px 12px rgba(45, 45, 88, 0.08);
-            padding: 1.4em 1em 1em 1em;
-            text-align: left;
-            min-height: 220px;
-            position: relative;
-        }
-        .card img {
-            width: 46px;
-            height: 46px;
-            position: absolute;
-            right: 1em;
-            top: 1em;
-            border-radius: 9px;
-            background: #fff2;
-        }
-        .card h3 {
-            color: #c6bfee;
-            margin: 0 0 0.3em;
-        }
-        .card p {
-            color: #e9e9e9;
-            font-size: 1.04em;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5em 0;
-            background: #292b46;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        th, td {
-            padding: 0.7em 1em;
-            text-align: left;
-            border-bottom: 1px solid #32325f;
-        }
-        th {
-            background: #353587;
-            color: #c6bfee;
-            font-weight: bold;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1em;
-        }
-        .gallery img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 1px 7px #0005;
-        }
-        @media (max-width: 600px) {
-            nav ul { gap: 1em; }
-            section { padding: 1rem 0.6rem; }
-            .hero { padding: 2em 0.3em; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Cyber Security Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #0a192f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section */
+    section { padding: 60px 20px; text-align: center; }
+    h2 { color: #0a192f; margin-bottom: 20px; }
+
+    /* Services */
+    .service-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .service img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    /* Contact */
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    form button:hover { background: #0056b3; }
+
+    footer {
+      background: #0a192f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <h1>Cybersecurity Hub</h1>
-    <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#challenges">Challenges</a></li>
-        <li><a href="#solutions">AI Solutions</a></li>
-        <li><a href="#gallery">Images</a></li>
-        <li><a href="#future">Future</a></li>
-    </ul>
-</nav>
+  <!-- Header -->
+  <header>
+    <h1>🔒 Cyber Security Solutions</h1>
+    <nav>
+      <a href="https://www.cisa.gov/" target="_blank">Home</a>
+      <a href="https://www.kaspersky.com/about" target="_blank">About</a>
+      <a href="https://www.ibm.com/security/services" target="_blank">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<div class="hero">
-    <img src="cybersecurity-padlock.png" alt="Cybersecurity Padlock" />
-    <h2>AI & Cybersecurity: The Next Frontier</h2>
-    <p>
-        Discover how artificial intelligence is taking cybersecurity into a new era of smart defenses, rapid threat detection, and automated protection against emerging digital risks.
-    </p>
-</div>
+  <!-- Home -->
+  <section id="home">
+    <h2>Stay Protected Against Cyber Threats</h2>
+    <p>We provide trusted security solutions for businesses and individuals worldwide.</p>
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?w=800" alt="Cyber Security" width="500">
+  </section>
 
-<section id="overview">
-    <h2>Overview</h2>
-    <p>
-        As threats such as ransomware, phishing, and advanced persistent attacks escalate, AI allows faster and smarter responses. It automates the detection of unknown attack patterns and adapts over time for a security posture that evolves with the digital landscape[web:7].
-    </p>
-</section>
+  <!-- About -->
+  <section id="about" style="background:#eef;">
+    <h2>About Cyber Security</h2>
+    <p>Cybersecurity is the practice of protecting systems, networks, and data from digital attacks.</p>
+    <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=800" alt="Team" width="500">
+  </section>
 
-<section id="challenges">
-    <h2>Current Cybersecurity Challenges</h2>
-    <ul>
-        <li>Sophisticated, multi-stage ransomware & phishing attacks</li>
-        <li>Traditional security tools fail against novel exploits</li>
-        <li>Rapid increase in zero-day threats and data breaches</li>
-        <li>Manual detection cannot keep pace with new attack vectors</li>
-    </ul>
-</section>
-
-<section id="solutions">
-    <h2>AI-Powered Security Solutions</h2>
-    <div class="card-grid">
-        <div class="card">
-            <img src="ai-brain-security.png" alt="AI Security"/>
-            <h3>CrowdStrike Falcon</h3>
-            <p>Detects unknown malware using machine learning, even when no signature exists. High accuracy against zero-day threats[web:7].</p>
-        </div>
-        <div class="card">
-            <img src="cyber-shield.png" alt="Watson Security"/>
-            <h3>IBM QRadar Advisor</h3>
-            <p>Uses AI to automate complex threat analyses, reducing manual effort for faster, focused incident response. Watson-enabled insight[web:7].</p>
-        </div>
-        <div class="card">
-            <img src="enterprise-immune.png" alt="Immune System"/>
-            <h3>Enterprise Immune System</h3>
-            <p>Leverages adaptive ML for real-time anomaly detection and containment of network intrusions[web:7].</p>
-        </div>
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800" alt="Network Security">
+        <h3>Network Security</h3>
+        <p>Protects your network against unauthorized access and cyberattacks.</p>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1633265486064-086b219a63fd?w=800" alt="Data Protection">
+        <h3>Data Protection</h3>
+        <p>Ensures your sensitive information is encrypted and secure.</p>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800" alt="Cloud Security">
+        <h3>Cloud Security</h3>
+        <p>Safeguards your cloud platforms from vulnerabilities and threats.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<section>
-    <h2>Strategic Advantages</h2>
-    <ul>
-        <li>Immediate response with fewer false positives</li>
-        <li>Self-learning models adapt to new threat types</li>
-        <li>Security analysts can focus on advanced risks</li>
-    </ul>
-</section>
+  <!-- Contact -->
+  <section id="contact" style="background:#eef;">
+    <h2>Contact Us</h2>
+    <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<section>
-    <h2>Implementation Challenges</h2>
-    <ul>
-        <li>AI requires high-quality training data</li>
-        <li>Adversarial attacks can trick AI systems</li>
-        <li>Ethical, privacy, and resource issues</li>
-    </ul>
-</section>
-
-<section id="gallery">
-    <h2>Cybersecurity Image Gallery</h2>
-    <div class="gallery">
-        <img src="cybersecurity-illustration1.jpg" alt="Cybersecurity Concept"/>
-        <img src="cybersecurity-illustration2.jpg" alt="AI in Cyber Defense"/>
-        <img src="cybersecurity-illustration3.jpg" alt="Threat Detection"/>
-        <img src="cybersecurity-illustration4.jpg" alt="Digital Protection"/>
-    </div>
-    <p style="color:#bab6e8; font-size:0.96em;">
-        Images from free resources like Freepik, Unsplash, and Shutterstock[web:2][web:3][web:13].
-    </p>
-</section>
-
-<section id="future">
-    <h2>The Future of AI in Cybersecurity</h2>
-    <ul>
-        <li>Predictive defense using generative AI modeling</li>
-        <li>Autonomous, self-healing network systems</li>
-        <li>Secure, decentralized threat sharing using blockchain</li>
-        <li>Ethical frameworks for bias mitigation and privacy[web:7].</li>
-    </ul>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Cyber Security Solutions | Stay Safe Online</p>
+  </footer>
 
 </body>
 </html>
